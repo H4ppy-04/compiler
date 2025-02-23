@@ -47,9 +47,12 @@ err(const char* msg, ...)
 void
 read_file(char* path, char* restrict contents)
 {
-        FILE* fd = fopen(path, "r");
-        if (fd != NULL) {
-                (void)fgets(contents, (int)sizeof(contents) + 1, fd);
+        FILE* fd = NULL;
+        if (file_exists(path) == 1) {
+                fd = fopen(path, "r");
+                if (fd != NULL) {
+                        (void)fgets(contents, (int)sizeof(contents) + 1, fd);
+                }
         } else {
                 err("File does not exist");
         }

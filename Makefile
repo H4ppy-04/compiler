@@ -35,6 +35,7 @@ fmt:
 
 test:
 	${CC} ${TEST} -o runner.out
+	./runner.out
 
 
 .PHONY: all clean dist install uninstall fmt check

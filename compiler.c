@@ -54,7 +54,10 @@ read_file(char* path, char* restrict contents)
                 if (fd != NULL) {
                         retval = (char*)fgets(contents,
                                               (int)sizeof(contents) + 1, fd);
-                        retval = (void*)retval;
+                        retval =
+                            (void*)retval; /* retval is quite literally useless
+                                              but fgets must return a value for
+                                              this to pass linting */
                 }
         } else {
                 err("File does not exist");

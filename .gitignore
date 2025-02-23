@@ -1,4 +1,8 @@
+# gcc
 *.out
-*.cache
-# ctags file
+
+# ctags
 tags
+
+# vim
+Session.vim

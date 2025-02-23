@@ -48,10 +48,13 @@ void
 read_file(char* path, char* restrict contents)
 {
         FILE* fd = NULL;
+        char* retval = NULL;
         if (file_exists(path) == 1) {
                 fd = fopen(path, "r");
                 if (fd != NULL) {
-                        (void)fgets(contents, (int)sizeof(contents) + 1, fd);
+                        retval = (char*)fgets(contents,
+                                              (int)sizeof(contents) + 1, fd);
+                        retval = (void*)retval;
                 }
         } else {
                 err("File does not exist");

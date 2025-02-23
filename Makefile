@@ -41,4 +41,4 @@ test:
 	./runner.out
 
 
-.PHONY: all clean dist install uninstall fmt check
+.PHONY: all clean dist install uninstall fmt check tags

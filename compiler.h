@@ -7,6 +7,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct {
+        char** path;
+        char** contents;
+} File;
+
 typedef struct Token Token;
 typedef enum {
         INT_LITERAL,
@@ -35,5 +40,11 @@ int file_exists(const char* path);
  * msg - primary error message.
  */
 void err(const char* msg, ...);
+
+/* Read file to string.
+ *
+ * path - the path to read to.
+ */
+void read_file(char* path, char* contents);
 
 #endif  // !H_COMP__

@@ -71,6 +71,15 @@ test_file_not_exists(CuTest* tc)
         CuAssertIntEquals(tc, exists, 0);
 }
 
+static void
+test_read_file(CuTest* tc)
+{
+        char* path = "./file.zn";
+        char* contents = (char*)malloc((int)(sizeof(char) * 4096));
+        read_file(path, contents);
+        CuAssertStrEquals(tc, "return 1", contents);
+}
+
 static CuSuite*
 get_malloc_suite(void)
 {
@@ -94,6 +103,7 @@ get_std_suite(void)
         SUITE_ADD_TEST(suite, test_create_new_token);
         SUITE_ADD_TEST(suite, test_file_exists);
         SUITE_ADD_TEST(suite, test_file_not_exists);
+        SUITE_ADD_TEST(suite, test_read_file);
         return suite;
 }
 

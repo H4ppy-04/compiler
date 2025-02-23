@@ -2,6 +2,10 @@
 
 #include "compiler.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 Token
 new_token(TokenType* type, void* data)
 {
@@ -38,4 +42,18 @@ err(const char* msg, ...)
         va_end(args);
         fprintf(stderr, "\n");
         (void)fflush(stderr);
+}
+
+void
+read_file(char* path, char* restrict contents)
+{
+        FILE* fd = fopen(path, "r");
+        if (fd != NULL) {
+                (void)fgets(contents, (int)sizeof(contents) + 1, fd);
+        } else {
+                err("File does not exist");
+        }
+        if (fd != NULL) {
+                (void)fclose(fd);
+        }
 }

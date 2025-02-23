@@ -14,7 +14,7 @@ check_argc_gt_2(int* argc, char*** argv)
 }
 
 int
-check_source_file(char** argv)
+check_source_file_exists(char** argv)
 {
         const char file = *argv[1];
         if (file_exists(&file) != 1) {

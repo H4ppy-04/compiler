@@ -7,7 +7,7 @@ main(int argc, char** argv)
                 return 1;
         }
 
-        if (check_source_file(argv) == 1) {
+        if (check_source_file_exists(argv) == 1) {
                 return 1;
         }
 

@@ -33,6 +33,9 @@ uninstall:
 fmt:
 	clang-format --fail-on-incomplete-format --verbose -i ${SRC} ${TEST} ${INC}
 
+tags:
+	ctags -o tags -R ${SRC} ${TEST} ${INC}
+
 test:
 	${CC} ${TEST} -o runner.out
 	./runner.out

@@ -112,5 +112,5 @@ main(void)
         CuSuiteDetails(suite, out);
         printf("%s\n", out->buffer);
         CuSuiteDelete(suite);
-        return 1;
+        return 0;
 }

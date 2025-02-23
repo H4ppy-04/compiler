@@ -1,0 +1,28 @@
+compiler - proof of concept complier
+====================================
+Compiler is a POC design for a basic language.
+
+Requirements
+------------
+This program has no requirements or dependencies.
+
+Installation
+------------
+Edit config.mk to match your system.
+The default installation location is in /usr/local.
+
+Then build and install the compiler (if necessary as
+root) as follows:
+
+    make clean install
+
+Running complier
+----------------
+You can run the compiler simply by doing the
+following to get usage details.
+
+    compiler --help
+
+License
+-------
+For licensing information see the LICENSE file.
